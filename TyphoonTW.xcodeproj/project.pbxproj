@@ -19,6 +19,7 @@
 		5D86CC8015E4B50100D1C94E /* ty_infos.js in Sources */ = {isa = PBXBuildFile; fileRef = 5D86CC7F15E4B50100D1C94E /* ty_infos.js */; };
 		5D86CC8215E4B56600D1C94E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D86CC8115E4B56600D1C94E /* CoreLocation.framework */; };
 		5D86CC8415E4B9C600D1C94E /* nangung.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5D86CC8315E4B9C600D1C94E /* nangung.gpx */; };
+		5D86CC8515E4CD1C00D1C94E /* ty_infos.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D86CC7F15E4B50100D1C94E /* ty_infos.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D86CC8515E4CD1C00D1C94E /* ty_infos.js in Resources */,
 				5D6E4FC015E4813600300DCD /* InfoPlist.strings in Resources */,
 				5D6E4FC915E4813600300DCD /* MainStoryboard.storyboard in Resources */,
 				5D86CC8415E4B9C600D1C94E /* nangung.gpx in Resources */,
