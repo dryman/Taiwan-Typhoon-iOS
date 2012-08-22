@@ -15,6 +15,10 @@
 		5D6E4FC615E4813600300DCD /* FCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E4FC515E4813600300DCD /* FCAppDelegate.m */; };
 		5D6E4FC915E4813600300DCD /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D6E4FC715E4813600300DCD /* MainStoryboard.storyboard */; };
 		5D6E4FCC15E4813600300DCD /* FCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D6E4FCB15E4813600300DCD /* FCViewController.m */; };
+		5D86CC7D15E4B4D100D1C94E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D86CC7C15E4B4D100D1C94E /* MapKit.framework */; };
+		5D86CC8015E4B50100D1C94E /* ty_infos.js in Sources */ = {isa = PBXBuildFile; fileRef = 5D86CC7F15E4B50100D1C94E /* ty_infos.js */; };
+		5D86CC8215E4B56600D1C94E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D86CC8115E4B56600D1C94E /* CoreLocation.framework */; };
+		5D86CC8415E4B9C600D1C94E /* nangung.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5D86CC8315E4B9C600D1C94E /* nangung.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +26,19 @@
 		5D6E4FB515E4813600300DCD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5D6E4FB715E4813600300DCD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5D6E4FB915E4813600300DCD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5D6E4FBD15E4813600300DCD /* TyphoonTW-Info.plist */ = {isa = PBXFileReference; path = "TyphoonTW-Info.plist"; sourceTree = "<group>"; };
+		5D6E4FBD15E4813600300DCD /* TyphoonTW-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TyphoonTW-Info.plist"; sourceTree = "<group>"; };
 		5D6E4FBF15E4813600300DCD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5D6E4FC115E4813600300DCD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5D6E4FC315E4813600300DCD /* TyphoonTW-Prefix.pch */ = {isa = PBXFileReference; path = "TyphoonTW-Prefix.pch"; sourceTree = "<group>"; };
-		5D6E4FC415E4813600300DCD /* FCAppDelegate.h */ = {isa = PBXFileReference; path = FCAppDelegate.h; sourceTree = "<group>"; };
+		5D6E4FC315E4813600300DCD /* TyphoonTW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TyphoonTW-Prefix.pch"; sourceTree = "<group>"; };
+		5D6E4FC415E4813600300DCD /* FCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCAppDelegate.h; sourceTree = "<group>"; };
 		5D6E4FC515E4813600300DCD /* FCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCAppDelegate.m; sourceTree = "<group>"; };
 		5D6E4FC815E4813600300DCD /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5D6E4FCA15E4813600300DCD /* FCViewController.h */ = {isa = PBXFileReference; path = FCViewController.h; sourceTree = "<group>"; };
+		5D6E4FCA15E4813600300DCD /* FCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCViewController.h; sourceTree = "<group>"; };
 		5D6E4FCB15E4813600300DCD /* FCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCViewController.m; sourceTree = "<group>"; };
+		5D86CC7C15E4B4D100D1C94E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5D86CC7F15E4B50100D1C94E /* ty_infos.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ty_infos.js; sourceTree = "<group>"; };
+		5D86CC8115E4B56600D1C94E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5D86CC8315E4B9C600D1C94E /* nangung.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = nangung.gpx; path = ../nangung.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D86CC8215E4B56600D1C94E /* CoreLocation.framework in Frameworks */,
+				5D86CC7D15E4B4D100D1C94E /* MapKit.framework in Frameworks */,
 				5D6E4FB615E4813600300DCD /* UIKit.framework in Frameworks */,
 				5D6E4FB815E4813600300DCD /* Foundation.framework in Frameworks */,
 				5D6E4FBA15E4813600300DCD /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +77,8 @@
 		5D6E4FB415E4813600300DCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D86CC8115E4B56600D1C94E /* CoreLocation.framework */,
+				5D86CC7C15E4B4D100D1C94E /* MapKit.framework */,
 				5D6E4FB515E4813600300DCD /* UIKit.framework */,
 				5D6E4FB715E4813600300DCD /* Foundation.framework */,
 				5D6E4FB915E4813600300DCD /* CoreGraphics.framework */,
@@ -90,6 +102,8 @@
 		5D6E4FBC15E4813600300DCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5D86CC7F15E4B50100D1C94E /* ty_infos.js */,
+				5D86CC8315E4B9C600D1C94E /* nangung.gpx */,
 				5D6E4FBD15E4813600300DCD /* TyphoonTW-Info.plist */,
 				5D6E4FBE15E4813600300DCD /* InfoPlist.strings */,
 				5D6E4FC115E4813600300DCD /* main.m */,
@@ -152,6 +166,7 @@
 			files = (
 				5D6E4FC015E4813600300DCD /* InfoPlist.strings in Resources */,
 				5D6E4FC915E4813600300DCD /* MainStoryboard.storyboard in Resources */,
+				5D86CC8415E4B9C600D1C94E /* nangung.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +180,7 @@
 				5D6E4FC215E4813600300DCD /* main.m in Sources */,
 				5D6E4FC615E4813600300DCD /* FCAppDelegate.m in Sources */,
 				5D6E4FCC15E4813600300DCD /* FCViewController.m in Sources */,
+				5D86CC8015E4B50100D1C94E /* ty_infos.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +292,7 @@
 				5D6E4FD115E4813600300DCD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
