@@ -15,6 +15,8 @@
 @implementation FCViewController
 @synthesize mapView;
 @synthesize clManager;
+@synthesize connection;
+@synthesize connectionData;
 
 - (CLLocationManager*)clManager{
     if (clManager==nil) {
@@ -36,21 +38,9 @@
     newRegion.center.longitude = 121.614189;
     newRegion.span.latitudeDelta = 10;
     
-    NSURL *path_url = [[NSBundle mainBundle] URLForResource:@"ty_infos" withExtension:@"js"];
-    NSString *ty_infos = [NSString stringWithContentsOfURL:path_url encoding:NSUTF8StringEncoding error:nil];
-    NSError *err = NULL;
-    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[.+?\\];" options:NSRegularExpressionDotMatchesLineSeparators error:&err];
-    NSRange range_of_match = [regex rangeOfFirstMatchInString:ty_infos options:NSRegularExpressionDotMatchesLineSeparators range:NSMakeRange(0, ty_infos.length)];
-    NSString *json = [ty_infos substringWithRange:NSMakeRange(range_of_match.location, range_of_match.length-1)];
-    NSArray* arr = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
-    
-    NSDictionary *weather = [arr objectAtIndex:0];
-    for (NSDictionary* fcst in [weather valueForKey:@"fcst"]) {
-        MKCircle *cir = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake([[fcst valueForKey:@"lat"] floatValue], [[fcst valueForKey:@"lon"] floatValue]) radius:[[fcst valueForKey:@"pr70"]floatValue]*1000];
-        [self.mapView addOverlay:cir];
-    }
-    
     [self.mapView setRegion:newRegion animated:YES];
+    
+    connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.cwb.gov.tw/V7/prevent/warning/Data/TEDPTA/js/datas/ty_infos.js"]] delegate:self startImmediately:YES];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -65,6 +55,35 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+#pragma mark NSURLConnection delegate
+- (void) connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    connectionData = [[NSMutableData alloc] init];
+}
+- (void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [connectionData appendData:data];
+}
+- (void) connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString *ty_infos = [[NSString alloc] initWithData:connectionData encoding:NSUTF8StringEncoding];
+    connectionData = nil;
+    NSError *err = NULL;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[.+?\\];" options:NSRegularExpressionDotMatchesLineSeparators error:&err];
+    NSRange range_of_match = [regex rangeOfFirstMatchInString:ty_infos options:NSRegularExpressionDotMatchesLineSeparators range:NSMakeRange(0, ty_infos.length)];
+    NSString *json = [ty_infos substringWithRange:NSMakeRange(range_of_match.location, range_of_match.length-1)];
+    NSArray* arr = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
+    
+    NSDictionary *weather = [arr objectAtIndex:0];
+    for (NSDictionary* fcst in [weather valueForKey:@"fcst"]) {
+        MKCircle *cir = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake([[fcst valueForKey:@"lat"] floatValue], [[fcst valueForKey:@"lon"] floatValue]) radius:[[fcst valueForKey:@"pr70"]floatValue]*1000];
+        [self.mapView addOverlay:cir];
+    }
+}
+- (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    connectionData = nil;
 }
 
 #pragma mark Map View Delegate methods
