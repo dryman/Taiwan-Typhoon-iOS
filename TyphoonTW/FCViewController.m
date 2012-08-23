@@ -124,9 +124,9 @@
 {
     if ([overlay isKindOfClass:[MKCircle class]]) {
         MKCircleView *view = [[MKCircleView alloc] initWithCircle:overlay];
-        view.fillColor = [[UIColor redColor] colorWithAlphaComponent:0.05];
-        view.strokeColor = [[UIColor redColor] colorWithAlphaComponent:0.25];
-        view.lineWidth = 3;
+        view.fillColor = [[UIColor redColor] colorWithAlphaComponent:0.02];
+        view.strokeColor = [[UIColor redColor] colorWithAlphaComponent:0.15];
+        view.lineWidth = 2;
         return view;
     } else if ([overlay isKindOfClass:[MKPolyline class]]) {
         MKPolylineView *view = [[MKPolylineView alloc] initWithPolyline:overlay];
