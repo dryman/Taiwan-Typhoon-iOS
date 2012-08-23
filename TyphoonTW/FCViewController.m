@@ -40,7 +40,7 @@
     
     [self.mapView setRegion:newRegion animated:YES];
     
-    connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.cwb.gov.tw/V7/prevent/warning/Data/TEDPTA/js/datas/ty_infos.js"]] delegate:self startImmediately:YES];
+    connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.cwb.gov.tw/V7/prevent/typhoon/Data/PTA_NEW/js/datas/ty_infos.js"]] delegate:self startImmediately:YES];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -76,10 +76,11 @@
     NSString *json = [ty_infos substringWithRange:NSMakeRange(range_of_match.location, range_of_match.length-1)];
     NSArray* arr = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
     
-    NSDictionary *weather = [arr objectAtIndex:0];
-    for (NSDictionary* fcst in [weather valueForKey:@"fcst"]) {
-        MKCircle *cir = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake([[fcst valueForKey:@"lat"] floatValue], [[fcst valueForKey:@"lon"] floatValue]) radius:[[fcst valueForKey:@"pr70"]floatValue]*1000];
-        [self.mapView addOverlay:cir];
+    for (NSDictionary *weather in arr) {
+        for (NSDictionary* fcst in [weather valueForKey:@"fcst"]) {
+            MKCircle *cir = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake([[fcst valueForKey:@"lat"] floatValue], [[fcst valueForKey:@"lon"] floatValue]) radius:[[fcst valueForKey:@"pr70"]floatValue]*1000];
+            [self.mapView addOverlay:cir];
+        }
     }
 }
 - (void) connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
