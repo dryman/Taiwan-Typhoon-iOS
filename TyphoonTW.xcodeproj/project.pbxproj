@@ -20,6 +20,10 @@
 		5D86CC8215E4B56600D1C94E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D86CC8115E4B56600D1C94E /* CoreLocation.framework */; };
 		5D86CC8415E4B9C600D1C94E /* nangung.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 5D86CC8315E4B9C600D1C94E /* nangung.gpx */; };
 		5D86CC8515E4CD1C00D1C94E /* ty_infos.js in Resources */ = {isa = PBXBuildFile; fileRef = 5D86CC7F15E4B50100D1C94E /* ty_infos.js */; };
+		5DE20EAD15E5CCDA0071D607 /* hurricane.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE20EAC15E5CCDA0071D607 /* hurricane.png */; };
+		5DE20EB015E5D8030071D607 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE20EAF15E5D8030071D607 /* QuartzCore.framework */; };
+		5DE20EB315E5DA9B0071D607 /* typh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE20EB115E5DA9B0071D607 /* typh.png */; };
+		5DE20EB415E5DA9B0071D607 /* typh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5DE20EB215E5DA9B0071D607 /* typh@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		5D86CC7F15E4B50100D1C94E /* ty_infos.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ty_infos.js; sourceTree = "<group>"; };
 		5D86CC8115E4B56600D1C94E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5D86CC8315E4B9C600D1C94E /* nangung.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = nangung.gpx; path = ../nangung.gpx; sourceTree = "<group>"; };
+		5DE20EAC15E5CCDA0071D607 /* hurricane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hurricane.png; sourceTree = "<group>"; };
+		5DE20EAF15E5D8030071D607 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5DE20EB115E5DA9B0071D607 /* typh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = typh.png; sourceTree = "<group>"; };
+		5DE20EB215E5DA9B0071D607 /* typh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "typh@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DE20EB015E5D8030071D607 /* QuartzCore.framework in Frameworks */,
 				5D86CC8215E4B56600D1C94E /* CoreLocation.framework in Frameworks */,
 				5D86CC7D15E4B4D100D1C94E /* MapKit.framework in Frameworks */,
 				5D6E4FB615E4813600300DCD /* UIKit.framework in Frameworks */,
@@ -78,6 +87,7 @@
 		5D6E4FB415E4813600300DCD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DE20EAF15E5D8030071D607 /* QuartzCore.framework */,
 				5D86CC8115E4B56600D1C94E /* CoreLocation.framework */,
 				5D86CC7C15E4B4D100D1C94E /* MapKit.framework */,
 				5D6E4FB515E4813600300DCD /* UIKit.framework */,
@@ -103,6 +113,9 @@
 		5D6E4FBC15E4813600300DCD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DE20EB115E5DA9B0071D607 /* typh.png */,
+				5DE20EB215E5DA9B0071D607 /* typh@2x.png */,
+				5DE20EAC15E5CCDA0071D607 /* hurricane.png */,
 				5D86CC7F15E4B50100D1C94E /* ty_infos.js */,
 				5D86CC8315E4B9C600D1C94E /* nangung.gpx */,
 				5D6E4FBD15E4813600300DCD /* TyphoonTW-Info.plist */,
@@ -169,6 +182,9 @@
 				5D6E4FC015E4813600300DCD /* InfoPlist.strings in Resources */,
 				5D6E4FC915E4813600300DCD /* MainStoryboard.storyboard in Resources */,
 				5D86CC8415E4B9C600D1C94E /* nangung.gpx in Resources */,
+				5DE20EAD15E5CCDA0071D607 /* hurricane.png in Resources */,
+				5DE20EB315E5DA9B0071D607 /* typh.png in Resources */,
+				5DE20EB415E5DA9B0071D607 /* typh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
