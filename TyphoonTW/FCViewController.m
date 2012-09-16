@@ -77,8 +77,10 @@
     NSString *json = [ty_infos substringWithRange:NSMakeRange(range_of_match.location, range_of_match.length-1)];
     NSArray* arr = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
     
-    @autoreleasepool {
-        for (NSDictionary *typhoon in arr) {
+    
+    for (NSDictionary *typhoon in arr) {
+        // Use autoreleasepool to release temporary objects
+        @autoreleasepool {
             size_t length = [[typhoon valueForKey:@"fcst"] count] + [[typhoon valueForKey:@"best_track"] count];
             CLLocationCoordinate2D *line_points = (CLLocationCoordinate2D*) malloc(length*sizeof(CLLocationCoordinate2D));
 
