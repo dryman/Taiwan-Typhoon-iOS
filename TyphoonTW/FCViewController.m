@@ -71,7 +71,7 @@
 {
     NSString *ty_infos = [[NSString alloc] initWithData:connectionData encoding:NSUTF8StringEncoding];
     connectionData = nil;
-    NSError *err = NULL;
+    NSError *err = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\[.+?\\];" options:NSRegularExpressionDotMatchesLineSeparators error:&err];
     NSRange range_of_match = [regex rangeOfFirstMatchInString:ty_infos options:NSRegularExpressionDotMatchesLineSeparators range:NSMakeRange(0, ty_infos.length)];
     NSString *json = [ty_infos substringWithRange:NSMakeRange(range_of_match.location, range_of_match.length-1)];

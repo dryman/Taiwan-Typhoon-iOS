@@ -1,0 +1,3 @@
+See [My blog][blog].
+
+[blog]: http://www.idryman.org/blog/2012/09/16/taiwan-typhoon-app-1/
